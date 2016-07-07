@@ -42,6 +42,15 @@ export function loadNotesFromDisk() {
         notes.push(note)
       }
 
+      notes.sort(function(a, b) {
+        if (a.date_updated < b.date_updated)
+          return 1
+        else if (a.date_updated > b.date_updated)
+          return -1
+        else
+          return 0
+      })
+
       dispatch(loadNotes(notes))
 
       if (notes.length > 0) {
@@ -103,8 +112,11 @@ export function deleteNote(id) {
     fs.exists(`${root_dir}/${id}.md`, function(exists) {
       if(exists) {
         fs.unlink(`${root_dir}/${id}.md`)
+        console.log(1)
         dispatch(selectNote(null))
+        console.log(2)
         dispatch(loadNotesFromDisk())
+        console.log(3)
       }
     })
   }

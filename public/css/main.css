@@ -169,6 +169,7 @@ textarea.rendernote {
   font-family: 'Source Code Pro';
   font-size: .9rem;
   white-space: pre;
+  padding-bottom: 15px;
 }
 
 /* ====== MARKDOWN ====== */

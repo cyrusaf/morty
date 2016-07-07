@@ -21,8 +21,10 @@ function reducer(state = {
       break
     case SET_ACTIVE_NOTE:
       view_mode = 'MARKDOWN'
-      if (state.notes[action.id].content.replace(/ /g, "") == "") {
-        view_mode = 'TEXT'
+      if (action.id != null) {
+        if (state.notes[action.id].content.replace(/ /g, "") == "") {
+          view_mode = 'TEXT'
+        }
       }
       return Object.assign({}, state, {
         active_note: action.id,
