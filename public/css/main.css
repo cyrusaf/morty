@@ -161,13 +161,13 @@ body {
   outline: none;
   box-shadow: none;
   overflow: scroll;
+  font-size: .8rem;
 
   padding: 15px;
 }
 
 textarea.rendernote {
   font-family: 'Source Code Pro';
-  font-size: .9rem;
   white-space: pre;
   padding-bottom: 15px;
 }
@@ -192,7 +192,7 @@ p {
 
 p, li {
   font-family: 'Open Sans Light';
-  font-size: .9rem;
+  font-size: .8rem;
 }
 
 hr {
