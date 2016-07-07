@@ -1,0 +1,208 @@
+@font-face {
+    font-family: 'Source Code Pro';
+    src: url(../fonts/Source_Code_Pro/SourceCodePro-Light.ttf);
+}
+
+@font-face {
+    font-family: 'Open Sans Bold';
+    src: url(../fonts/Open_Sans/OpenSans-Bold.ttf);
+}
+
+@font-face {
+    font-family: 'Open Sans Light';
+    src: url(../fonts/Open_Sans/OpenSans-Light.ttf);
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    src: url(../fonts/Open_Sans/OpenSans-Regular.ttf);
+}
+
+body {
+  margin: 0;
+  color: #333;
+  font-family: 'Open Sans';
+}
+
+/* ====== TOOLBAR ====== */
+
+.toolbar {
+  width: 100%;
+  background-color: #e8e8e8;
+  height: 40px;
+  border-bottom: 1px solid #d1d1d1;
+  -webkit-user-select: none;
+  -webkit-app-region: drag;
+  padding: 0 10px 0 10px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+
+.toolbar .left, .toolbar .right {
+  display: flex;
+  align-items: center;
+}
+
+.win-btn {
+  display: inline-block;
+  border-radius: 20px;
+  width: 12px;
+  height: 12px;
+  background: #666;
+  border: 1px solid #d1d1d1;
+  -webkit-app-region: no-drag;
+  -webkit-user-select: none;
+  margin-right: 5px;
+
+  transition: .1s;
+}
+
+.win-btn-close {
+  background-color: rgb(252, 98, 93);
+  border-color: rgb(230, 78, 73);
+}
+
+.win-btn-close:hover {
+  background-color: rgb(230, 78, 73);
+}
+
+.win-btn-minimize {
+  background-color: rgb(253, 190, 65);
+  border-color: rgb(233, 170, 45);
+}
+
+.win-btn-minimize:hover {
+  background-color: rgb(233, 170, 45);
+}
+
+.win-btn-maximize {
+  background-color: rgb(53, 204, 75);
+  border-color: rgb(33, 184, 55);
+}
+
+.win-btn-maximize:hover {
+  background-color: rgb(33, 184, 55);
+}
+
+.tool-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 25px;
+  background: #fff;
+  margin-left: 10px;
+  border-radius: 3px;
+  box-shadow: 0 0 2px rgba(0,0,0,.1);
+  text-align: center;
+  -webkit-app-region: no-drag;
+  -webkit-user-select: none;
+  font-size: .8em;
+  color: #555;
+}
+
+.tool-btn:active {
+  background: #f1f1f1;
+}
+
+.tool-btn.disabled, .tool-btn.disabled:active {
+    background: #fff;
+    color: #999;
+}
+
+/* ====== NOTELIST ====== */
+.notelist {
+  float: left;
+  width: 200px;
+  border-right: 1px solid #e1e1e1;
+  height: calc(100vh - 40px);
+  box-sizing: border-box;
+
+  overflow: scroll;
+}
+
+.notelist-item {
+  display: flex;
+  flex-direction: column;
+  -webkit-user-select: none;
+  cursor: pointer;
+
+  padding: 10px 15px 10px 15px;
+  border-bottom: 1px solid #e1e1e1;
+}
+
+.notelist-item.active {
+  background: rgb(250, 236, 183);
+  border-bottom-color: rgb(250, 236, 183);
+}
+
+.notelist-item .note-title {
+  font-family: 'Open Sans Bold';
+  font-size: .9em;
+  white-space: nowrap;
+}
+
+.notelist-item .note-caption {
+  font-family: 'Open Sans Light';
+  font-size: .7em;
+  margin-top: 4px;
+}
+
+/* ====== RENDERNOTE ====== */
+.rendernote {
+  float: left;
+  width: calc(100% - 200px);
+  height: calc(100vh - 40px);
+  box-sizing: border-box;
+  border: none;
+  outline: none;
+  box-shadow: none;
+  overflow: scroll;
+
+  padding: 15px;
+}
+
+textarea.rendernote {
+  font-family: 'Source Code Pro';
+  font-size: .9rem;
+  white-space: pre;
+}
+
+/* ====== MARKDOWN ====== */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Open Sans Bold';
+  margin: 0;
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+
+ul, ol {
+  margin: 0;
+}
+
+p {
+  margin: 0;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+p, li {
+  font-family: 'Open Sans Light';
+  font-size: .9rem;
+}
+
+hr {
+  margin: 0;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border: none;
+  height: 1px;
+  background: #e1e1e1;
+}
+
+strong {
+  font-family: 'Open Sans Bold';
+}
